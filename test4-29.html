@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      display: flex;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .box1 {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .box2 {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .box1 input[type="text"] {
+      height: 30px;
+      font-size: 16px;
+      padding: 4px;
+      box-sizing: border-box;
+    }
+
+    .box2 input[type="button"] {
+      width: 35px;
+      height: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      
+
+    }
+    label{
+        font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1">
+
+      <label for="">First Number:</label><input type="text" id="num1" placeholder="Input Number" />
+      <label for="">Second Number:</label><input type="text" id="num2" placeholder="Input Number" />
+      <label for="">Result:</label><input type="text" id="total" placeholder="Result" readonly />
+    </div>
+    <div class="box2">
+      <input type="button" id="add" value="+" onclick="add()" />
+      <input type="button" id="substract" value="-" onclick="substract()" />
+      <input type="button" id="multiply" value="×" onclick="multiply()" />
+      <input type="button" id="divide" value="÷" onclick="divide()" />
+    </div>
+  </div>
+
+  <script>
+    function add() {
+      var number1 = parseFloat(document.getElementById("num1").value);
+      var number2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("total").value = number1 + number2;
+    }
+
+    function substract() {
+      var number1 = parseFloat(document.getElementById("num1").value);
+      var number2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("total").value = number1 - number2;
+    }
+
+    function multiply() {
+      var number1 = parseFloat(document.getElementById("num1").value);
+      var number2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("total").value = number1 * number2;
+    }
+
+    function divide() {
+      var number1 = parseFloat(document.getElementById("num1").value);
+      var number2 = parseFloat(document.getElementById("num2").value);
+      document.getElementById("total").value =
+        number2 !== 0 ? number1 / number2 : "Cannot divide by zero";
+    }
+  </script>
+</body>
+</html>
